@@ -94,3 +94,24 @@ per-question breakdown lands in `eval/ragas_results.csv`.
 - Version pins in `requirements.txt` matter: `ragas==0.2.15` with
   `langchain-community<0.4` — newer langchain-community removes a module
   ragas imports.
+## Results from a real run
+
+RAGAS scores over the 5-question golden set (`eval/questions.json`), scored
+with GPT-4o as judge:
+
+| Metric | Score |
+|---|---|
+| Faithfulness | 0.967 |
+| Context precision | 0.917 |
+| Context recall | 0.800 |
+| Answer relevancy | 0.777 |
+
+Faithfulness at 0.97 means almost every claim in the generated answers is
+supported by retrieved context — the anti-hallucination signal. Context
+precision at 0.92 says the Chroma retrieval is surfacing genuinely relevant
+chunks.
+
+The weakest metric is answer relevancy (0.78): answers sometimes include
+more surrounding detail than the question strictly asked for. The obvious
+next levers are tightening the answer prompt for concision, and raising
+`TOP_K` above 4 to lift context recall.
