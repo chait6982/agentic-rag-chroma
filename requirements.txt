@@ -1,0 +1,11 @@
+chromadb
+openai
+pypdf
+ddgs
+python-dotenv
+pandas
+
+# Evaluation (RAGAS) — pins matter: newer langchain-community breaks ragas imports
+ragas==0.2.15
+langchain-community<0.4
+langchain-openai

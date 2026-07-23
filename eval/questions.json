@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the main architectural innovation proposed in the paper?",
+    "reference": "The paper proposes the Transformer, an architecture based entirely on attention mechanisms, dispensing with recurrence and convolutions. It uses stacked self-attention and point-wise fully connected layers in both the encoder and decoder."
+  },
+  {
+    "question": "What is multi-head attention and why is it used?",
+    "reference": "Multi-head attention runs several attention functions in parallel over different learned linear projections of the queries, keys and values, then concatenates the results. It lets the model jointly attend to information from different representation subspaces at different positions, which a single attention head would average away."
+  },
+  {
+    "question": "How does the Transformer inject information about token order?",
+    "reference": "Since the model contains no recurrence or convolution, positional encodings are added to the input embeddings at the bottom of the encoder and decoder stacks. The paper uses fixed sinusoidal positional encodings of different frequencies."
+  },
+  {
+    "question": "What is scaled dot-product attention and why is the scaling factor needed?",
+    "reference": "Scaled dot-product attention computes attention weights as the softmax of the dot products of queries with keys, divided by the square root of the key dimension, applied to the values. The scaling by 1/sqrt(d_k) prevents the dot products from growing large in magnitude, which would push the softmax into regions with extremely small gradients."
+  },
+  {
+    "question": "What BLEU score did the big Transformer model achieve on the WMT 2014 English-to-German translation task?",
+    "reference": "The big Transformer model achieved a BLEU score of 28.4 on the WMT 2014 English-to-German translation task, improving over previously reported models and ensembles."
+  }
+]

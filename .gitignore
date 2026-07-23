@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Vector store & run artifacts (rebuild locally, do not commit)
+chroma_db/
+traces/
+eval/ragas_results.csv
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# OS
+.DS_Store
